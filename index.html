@@ -58,42 +58,41 @@ p{margin:0}
 .noktalar{background-image:radial-gradient(rgba(255,255,255,.28) 1.6px,transparent 1.8px);background-size:16px 16px}
 
 /* hero */
-.hero{background:var(--degrade);color:#D6E2F5;position:relative;overflow:hidden}
-.hero .noktalar{position:absolute;inset:0;-webkit-mask-image:linear-gradient(110deg,transparent 35%,#000 75%);mask-image:linear-gradient(110deg,transparent 35%,#000 75%);opacity:.6}
+.hero{background:#fff;color:var(--soluk);position:relative;overflow:hidden}
+.noktalar-acik{background-image:radial-gradient(rgba(20,70,160,.13) 1.5px,transparent 1.7px);background-size:18px 18px}
+.hero .noktalar-acik{position:absolute;inset:0;-webkit-mask-image:linear-gradient(100deg,transparent 45%,#000 85%);mask-image:linear-gradient(100deg,transparent 45%,#000 85%)}
 .ust{position:relative;z-index:2}
 .ust .kap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
 .marka{display:flex;align-items:center;gap:10px;text-decoration:none}
 .marka img{width:42px;height:42px;border-radius:50%;background:#fff}
-.marka span{font-size:25px;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.marka span{font-size:25px;font-weight:800;color:var(--lacivert);letter-spacing:-0.02em}
 .menu{display:flex;gap:30px;flex-wrap:wrap;font-weight:600;font-size:15px}
-.menu a{color:#D6E2F5;text-decoration:none}
-.menu a:hover{color:#fff}
+.menu a{color:var(--metin);text-decoration:none}
+.menu a:hover{color:var(--kral)}
 .hero-ic{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;padding-top:48px;padding-bottom:120px}
-.hero h1{color:#fff;font-size:clamp(44px,6vw,80px);line-height:1;letter-spacing:-0.04em}
+.hero h1{color:var(--lacivert);font-size:clamp(44px,6vw,80px);line-height:1;letter-spacing:-0.04em}
 .hero-metin{display:flex;flex-direction:column;gap:28px}
 .hero-metin>p{font-size:20px;max-width:520px}
 .hero-btn{display:flex;gap:12px;flex-wrap:wrap}
 .hero-not{font-size:15px}
-.hero-not a{color:#fff;font-weight:700}
+.hero-not a{color:var(--kral);font-weight:700}
 
-/* halka sahnesi */
-.sahne{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:end}
-.sahne svg.halka{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.daire{position:absolute;border-radius:50%;overflow:hidden;background:#F2F2F2;box-shadow:0 24px 60px rgba(4,18,48,.35)}
-.daire img{width:100%;height:100%;object-fit:cover}
-.d1{width:56%;left:9%;top:17%}
-.d1 img{object-position:50% 30%}
-.d2{width:38%;right:4%;bottom:6%;background:#F0F1F6}
-.d2 img{object-position:50% 25%}
-.d1,.d2{aspect-ratio:1/1}
-.rozet{position:absolute;background:#fff;color:var(--lacivert);border-radius:14px;padding:12px 16px;box-shadow:0 12px 30px rgba(4,18,48,.25);font-size:14px;line-height:1.35;max-width:220px}
-.rozet b{display:block;font-size:15px}
-.rozet span{color:var(--petrol);font-weight:700}
-.r1{left:0;bottom:20%}
-.r2{right:0;top:8%}
+/* daire kompozisyonu */
+.desen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;width:100%;max-width:540px;justify-self:end}
+.desen>*{position:relative;aspect-ratio:1/1;border-radius:50%}
+.desen svg{width:100%;height:100%;display:block;overflow:visible}
+.desen .foto-d{overflow:visible;background:#F2F2F2;box-shadow:0 18px 40px rgba(10,42,99,.14)}
+.desen .foto-d img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;border-radius:50%}
+.desen .foto-d.elbise{background:#F0F1F6}
+.desen .bos-d{background:var(--sis)}
+.desen .bos-d img{width:56%;height:56%;margin:22%;border-radius:50%}
+.desen figcaption{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);white-space:nowrap;background:#fff;color:var(--lacivert);font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px;box-shadow:0 6px 18px rgba(10,42,99,.15)}
+.desen figure{margin:0;overflow:visible}
 @media (prefers-reduced-motion:no-preference){
-  .cizim{stroke-dasharray:1200;stroke-dashoffset:1200;animation:ciz 1.8s cubic-bezier(.6,0,.2,1) .2s forwards}
-  @keyframes ciz{to{stroke-dashoffset:var(--son,240)}}
+  .yay{stroke-dasharray:var(--u) 999;stroke-dashoffset:var(--u);animation:yayciz 1.4s cubic-bezier(.6,0,.2,1) forwards}
+  .desen>*:nth-child(3n+2) .yay{animation-delay:.15s}
+  .desen>*:nth-child(3n) .yay{animation-delay:.3s}
+  @keyframes yayciz{to{stroke-dashoffset:0}}
 }
 
 /* ortaklar */
@@ -113,19 +112,19 @@ p{margin:0}
 .adimlar p{color:var(--soluk)}
 
 /* yönlendirme */
-.rota-bolum{background:var(--degrade);color:#D6E2F5}
-.rota-bolum .noktalar{position:absolute;inset:0;-webkit-mask-image:linear-gradient(200deg,#000 0%,transparent 45%);mask-image:linear-gradient(200deg,#000 0%,transparent 45%);opacity:.7}
+.rota-bolum{background:var(--sis);color:var(--soluk)}
+.rota-bolum .noktalar-acik{position:absolute;inset:0;-webkit-mask-image:linear-gradient(200deg,#000 0%,transparent 40%);mask-image:linear-gradient(200deg,#000 0%,transparent 40%)}
 .rota-bolum .kap{position:relative;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start}
-.rota-bolum h2{color:#fff;font-size:clamp(32px,4vw,50px);line-height:1.06}
+.rota-bolum h2{color:var(--lacivert);font-size:clamp(32px,4vw,50px);line-height:1.06}
 .rota-sol{display:flex;flex-direction:column;gap:18px}
 .rota-sol p{font-size:19px}
 .rota{list-style:none;margin:0;padding:0}
-.rota li{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr);align-items:center;gap:18px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.18)}
-.rota li:first-child{border-top:1px solid rgba(255,255,255,.18)}
-.rota .ne{font-size:21px;font-weight:800;color:#fff;line-height:1.25}
-.rota .ne small{display:block;font-size:14px;font-weight:500;color:#A9BEDF;margin-top:3px}
+.rota li{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr);align-items:center;gap:18px;padding:24px 0;border-bottom:1px solid var(--cizgi)}
+.rota li:first-child{border-top:1px solid var(--cizgi)}
+.rota .ne{font-size:21px;font-weight:800;color:var(--lacivert);line-height:1.25}
+.rota .ne small{display:block;font-size:14px;font-weight:500;color:var(--soluk);margin-top:3px}
 .rota svg{width:64px;height:14px}
-.rota .nereye{font-weight:700;color:#8FE3E0}
+.rota .nereye{font-weight:700;color:var(--petrol)}
 
 /* kurumlar */
 .kurumlar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
@@ -210,13 +209,13 @@ p{margin:0}
 .plan-one .tutar small,.plan-one p{color:#C4D3EC}
 
 /* pilot */
-.pilot{background:var(--degrade);color:#D6E2F5}
-.pilot .noktalar{position:absolute;inset:0;-webkit-mask-image:linear-gradient(90deg,#000 0%,transparent 50%);mask-image:linear-gradient(90deg,#000 0%,transparent 50%);opacity:.5}
+.pilot{background:#fff;color:var(--soluk)}
+.pilot .noktalar-acik{position:absolute;inset:0;-webkit-mask-image:linear-gradient(90deg,#000 0%,transparent 45%);mask-image:linear-gradient(90deg,#000 0%,transparent 45%)}
 .pilot .kap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:start}
-.pilot h2{color:#fff;font-size:clamp(32px,4vw,50px);line-height:1.06}
+.pilot h2{color:var(--lacivert);font-size:clamp(32px,4vw,50px);line-height:1.06}
 .pilot-metin{display:flex;flex-direction:column;gap:18px}
 .pilot-metin p{font-size:19px}
-form{display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:32px}
+form{display:flex;flex-direction:column;gap:16px;background:var(--degrade);border-radius:26px;padding:36px;box-shadow:0 24px 60px rgba(10,42,99,.18)}
 label{display:flex;flex-direction:column;gap:6px;font-weight:700;color:#fff;font-size:15px}
 input,select{min-height:52px;border:1.5px solid rgba(255,255,255,.3);border-radius:12px;padding:0 14px;font-family:inherit;font-size:16px;background:rgba(7,31,77,.35);color:#fff}
 input::placeholder{color:#9FB3D6}
@@ -226,6 +225,7 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
 /* alt */
 .alt{background:var(--gece);color:#B9C8E2}
 .alt .kap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;padding-top:56px;padding-bottom:56px}
+.alt .marka span{color:#fff}
 .alt-slogan{font-size:22px;font-weight:800;color:#8FE3E0;margin-top:12px}
 .alt nav{display:flex;gap:56px;flex-wrap:wrap}
 .alt nav div{display:flex;flex-direction:column;gap:8px}
@@ -235,7 +235,7 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
 
 @media (max-width:960px){
   .hero-ic,.rota-bolum .kap,.ogrenci .kap,.pilot .kap{grid-template-columns:minmax(0,1fr)}
-  .sahne{justify-self:center}
+  .desen{justify-self:center}
   .adimlar,.olcum{grid-template-columns:repeat(2,minmax(0,1fr))}
   .urunler{grid-template-columns:repeat(2,minmax(0,1fr))}
   .kurumlar,.planlar{grid-template-columns:minmax(0,1fr)}
@@ -261,7 +261,7 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
 <body>
 
 <div class="hero" id="top">
-  <div class="noktalar" aria-hidden="true"></div>
+  <div class="noktalar-acik" aria-hidden="true"></div>
   <header class="ust">
     <div class="kap">
       <a class="marka" href="#top"><img src="/assets/dongu-icon.png" alt=""><span>Döngü</span></a>
@@ -272,7 +272,7 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
         <a href="#ogrenciler">Öğrenciler</a>
         <a href="#fiyat">Fiyatlar</a>
       </nav>
-      <a class="btn btn-beyaz" href="#pilot">Demo talep et</a>
+      <a class="btn btn-ana" href="#pilot">Demo talep et</a>
     </div>
   </header>
 
@@ -281,24 +281,27 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
       <h1>İyi durumdaki her kıyafet, doğru kişiye ulaşsın.</h1>
       <p>Döngü; ikinci el butiklerin, iyilik platformlarının ve üniversitelerin bağış kabul, kalite kontrol ve öğrenci erişimi altyapısı. Siz amacınıza odaklanın, operasyonu biz yürütelim.</p>
       <div class="hero-btn">
-        <a class="btn btn-beyaz" href="#pilot">Kurumunuz için demo talep edin</a>
-        <a class="btn btn-hayalet" href="#bagis">Kıyafet bağışla</a>
+        <a class="btn btn-ana" href="#pilot">Kurumunuz için demo talep edin</a>
+        <a class="btn btn-cizgi" href="#bagis">Kıyafet bağışla</a>
       </div>
       <p class="hero-not">Öğrenci misiniz? <a href="#ogrenciler">Okulunuzun Döngü gardırobunu bulun</a></p>
     </div>
 
-    <div class="sahne" role="img" aria-label="Bağışlanan bir lacivert blazer ve siyah elbise, gidecekleri yerlerle birlikte">
-      <svg class="halka" viewBox="0 0 560 560" aria-hidden="true">
-        <defs>
-          <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#21B3B5"/><stop offset="1" stop-color="#4C7BE0"/></linearGradient>
-        </defs>
-        <circle class="cizim" cx="280" cy="280" r="236" fill="none" stroke="url(#hg)" stroke-width="44" stroke-linecap="round" pathLength="1200" style="--son:220" transform="rotate(-62 280 280)"/>
-        <circle cx="280" cy="280" r="272" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
-      </svg>
-      <div class="daire d1"><img src="/assets/blazer.jpg" alt="" width="720" height="1080"></div>
-      <div class="daire d2"><img src="/assets/elbise.jpg" alt="" width="720" height="960"></div>
-      <div class="rozet r1"><b>Lacivert blazer, M</b><span>Kariyer Gardırobu'na gidiyor</span></div>
-      <div class="rozet r2"><b>Siyah uzun elbise, S</b><span>İyilik butiğinde satışa çıkıyor</span></div>
+    <div class="desen" role="img" aria-label="Bağışlanan bir lacivert blazer ve siyah elbise, döngüyü anlatan halka formları arasında">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#21B3B5"/><stop offset="1" stop-color="#1446A0"/></linearGradient>
+<linearGradient id="g2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1446A0"/><stop offset="1" stop-color="#21B3B5"/></linearGradient>
+<linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FD3D4"/><stop offset="1" stop-color="#21B3B5"/></linearGradient>
+</defs></svg>
+      <div><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="yay" cx="100" cy="100" r="76" fill="none" stroke="url(#g1)" stroke-width="26" stroke-linecap="round" pathLength="300" style="--u:215" transform="rotate(20 100 100)"/></svg></div>
+      <figure class="foto-d"><img src="/assets/blazer.jpg" alt="" width="720" height="1080"><figcaption>Kariyer Gardırobu'na</figcaption></figure>
+      <div><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="40.0" fill="none" stroke="url(#g3)" stroke-width="1.6"/><circle cx="100" cy="100" r="46.5" fill="none" stroke="url(#g3)" stroke-width="1.6"/><circle cx="100" cy="100" r="53.0" fill="none" stroke="url(#g3)" stroke-width="1.6"/><circle cx="100" cy="100" r="59.5" fill="none" stroke="url(#g3)" stroke-width="1.6"/><circle cx="100" cy="100" r="66.0" fill="none" stroke="url(#g3)" stroke-width="1.6"/><circle cx="100" cy="100" r="72.5" fill="none" stroke="url(#g3)" stroke-width="1.6"/><circle cx="100" cy="100" r="79.0" fill="none" stroke="url(#g3)" stroke-width="1.6"/><circle cx="100" cy="100" r="85.5" fill="none" stroke="url(#g3)" stroke-width="1.6"/><circle cx="100" cy="100" r="92.0" fill="none" stroke="url(#g3)" stroke-width="1.6"/></svg></div>
+      <div><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="40.0" fill="none" stroke="url(#g2)" stroke-width="1.6"/><circle cx="100" cy="100" r="46.5" fill="none" stroke="url(#g2)" stroke-width="1.6"/><circle cx="100" cy="100" r="53.0" fill="none" stroke="url(#g2)" stroke-width="1.6"/><circle cx="100" cy="100" r="59.5" fill="none" stroke="url(#g2)" stroke-width="1.6"/><circle cx="100" cy="100" r="66.0" fill="none" stroke="url(#g2)" stroke-width="1.6"/><circle cx="100" cy="100" r="72.5" fill="none" stroke="url(#g2)" stroke-width="1.6"/><circle cx="100" cy="100" r="79.0" fill="none" stroke="url(#g2)" stroke-width="1.6"/><circle cx="100" cy="100" r="85.5" fill="none" stroke="url(#g2)" stroke-width="1.6"/><circle cx="100" cy="100" r="92.0" fill="none" stroke="url(#g2)" stroke-width="1.6"/></svg></div>
+      <div><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="yay" cx="100" cy="100" r="76" fill="none" stroke="url(#g2)" stroke-width="30" stroke-linecap="round" pathLength="300" style="--u:230" transform="rotate(200 100 100)"/></svg></div>
+      <figure class="foto-d elbise"><img src="/assets/elbise.jpg" alt="" width="720" height="960"><figcaption>İyilik butiğine</figcaption></figure>
+      <div><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="yay" cx="100" cy="100" r="76" fill="none" stroke="url(#g3)" stroke-width="22" stroke-linecap="round" pathLength="300" style="--u:200" transform="rotate(110 100 100)"/></svg></div>
+      <div class="bos-d"><img src="/assets/dongu-icon.png" alt=""></div>
+      <div><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="yay" cx="100" cy="100" r="76" fill="none" stroke="url(#g1)" stroke-width="26" stroke-linecap="round" pathLength="300" style="--u:225" transform="rotate(-40 100 100)"/></svg></div>
     </div>
   </div>
 </div>
@@ -332,17 +335,17 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
 </section>
 
 <section class="bolum rota-bolum" aria-labelledby="rota-baslik">
-  <div class="noktalar" aria-hidden="true"></div>
+  <div class="noktalar-acik" aria-hidden="true"></div>
   <div class="kap">
     <div class="rota-sol">
       <h2 id="rota-baslik">Hiçbir bağış boşa gitmez.</h2>
       <p>Lüks bir ceket bir iyilik butiğinde bursa dönüşür. Sağlam bir kot, bir öğrencinin gardırobuna girer. Döngü ağındaki kurumlar birbirini besler.</p>
     </div>
     <ul class="rota">
-      <li><span class="ne">Premium ve lüks markalar<small>İpek, kaşmir, tasarımcı parçalar</small></span><svg viewBox="0 0 64 14" aria-hidden="true"><line x1="0" y1="7" x2="56" y2="7" stroke="#21B3B5" stroke-width="2"/><circle cx="58" cy="7" r="5" fill="#21B3B5"/></svg><span class="nereye">İyilik butiğinde satılır, gelir bursa gider</span></li>
-      <li><span class="ne">Kaliteli günlük giyim<small>Kot, triko, mont, sneaker</small></span><svg viewBox="0 0 64 14" aria-hidden="true"><line x1="0" y1="7" x2="56" y2="7" stroke="#21B3B5" stroke-width="2"/><circle cx="58" cy="7" r="5" fill="#21B3B5"/></svg><span class="nereye">Öğrenciye ücretsiz ulaşır</span></li>
-      <li><span class="ne">Ceket, takım, gömlek<small>Mülakat ve staj kıyafetleri</small></span><svg viewBox="0 0 64 14" aria-hidden="true"><line x1="0" y1="7" x2="56" y2="7" stroke="#21B3B5" stroke-width="2"/><circle cx="58" cy="7" r="5" fill="#21B3B5"/></svg><span class="nereye">Üniversitenin Kariyer Gardırobu'na girer</span></li>
-      <li><span class="ne">Giyilemeyecek durumda<small>Yıpranmış, lekeli, onarılamaz</small></span><svg viewBox="0 0 64 14" aria-hidden="true"><line x1="0" y1="7" x2="56" y2="7" stroke="#21B3B5" stroke-width="2"/><circle cx="58" cy="7" r="5" fill="#21B3B5"/></svg><span class="nereye">Tekstil geri dönüşümüne gider</span></li>
+      <li><span class="ne">Premium ve lüks markalar<small>İpek, kaşmir, tasarımcı parçalar</small></span><svg viewBox="0 0 64 14" aria-hidden="true"><line x1="0" y1="7" x2="56" y2="7" stroke="#0E7F8F" stroke-width="2"/><circle cx="58" cy="7" r="5" fill="#0E7F8F"/></svg><span class="nereye">İyilik butiğinde satılır, gelir bursa gider</span></li>
+      <li><span class="ne">Kaliteli günlük giyim<small>Kot, triko, mont, sneaker</small></span><svg viewBox="0 0 64 14" aria-hidden="true"><line x1="0" y1="7" x2="56" y2="7" stroke="#0E7F8F" stroke-width="2"/><circle cx="58" cy="7" r="5" fill="#0E7F8F"/></svg><span class="nereye">Öğrenciye ücretsiz ulaşır</span></li>
+      <li><span class="ne">Ceket, takım, gömlek<small>Mülakat ve staj kıyafetleri</small></span><svg viewBox="0 0 64 14" aria-hidden="true"><line x1="0" y1="7" x2="56" y2="7" stroke="#0E7F8F" stroke-width="2"/><circle cx="58" cy="7" r="5" fill="#0E7F8F"/></svg><span class="nereye">Üniversitenin Kariyer Gardırobu'na girer</span></li>
+      <li><span class="ne">Giyilemeyecek durumda<small>Yıpranmış, lekeli, onarılamaz</small></span><svg viewBox="0 0 64 14" aria-hidden="true"><line x1="0" y1="7" x2="56" y2="7" stroke="#0E7F8F" stroke-width="2"/><circle cx="58" cy="7" r="5" fill="#0E7F8F"/></svg><span class="nereye">Tekstil geri dönüşümüne gider</span></li>
     </ul>
   </div>
 </section>
@@ -524,7 +527,7 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
 </section>
 
 <section class="bolum pilot" id="pilot">
-  <div class="noktalar" aria-hidden="true"></div>
+  <div class="noktalar-acik" aria-hidden="true"></div>
   <div class="kap">
     <div class="pilot-metin">
       <h2>Pilot programımıza katılın.</h2>
