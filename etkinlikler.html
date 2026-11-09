@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Döngü Pop-up Mağaza – Kış ve Yaz sezonu etkinlikleri</title>
+<meta name="description" content="Döngü, proje ortaklarıyla yılda iki kez, kış ve yaz sezonunda pop-up mağaza açıyor. İkinci el ya da kendi ürünlerinizle katılın veya kendi pop-up bazaar'ınızı düzenleyin.">
+<meta property="og:title" content="Döngü Pop-up Mağaza – Kış ve Yaz sezonu">
+<meta property="og:description" content="İkinci el ya da kendi ürünlerinizle katılın, kendi pop-up bazaar'ınızı düzenleyin.">
+<meta property="og:image" content="/assets/og-image.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A2A63">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gece:#071F4D;--lacivert:#0A2A63;--kral:#1446A0;--petrol:#0E7F8F;--petrol-yazi:#0A6774;--turkuaz:#21B3B5;
+  --beyaz:#FFFFFF;--sis:#F2F5F8;--metin:#14213A;--soluk:#4F5D72;--cizgi:#D9E0E8;
+  --degrade:linear-gradient(135deg,#071F4D 0%,#1446A0 55%,#0E7F8F 100%);
+  --halka:linear-gradient(135deg,#21B3B5,#1446A0);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--metin);font-family:"Manrope",system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--kral)}a:hover{color:var(--petrol)}
+:focus-visible{outline:3px solid var(--turkuaz);outline-offset:3px;border-radius:4px}
+.atla{position:absolute;left:16px;top:-80px;z-index:10;background:var(--lacivert);color:#fff;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none}
+.atla:focus{top:16px;color:#fff}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-0.025em;color:var(--lacivert)}
+p{margin:0}
+.kap{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer;transition:background .15s,color .15s,border-color .15s;text-align:center}
+.btn-ana{background:var(--kral);color:#fff}.btn-ana:hover{background:var(--lacivert);color:#fff}
+.btn-cizgi{border-color:var(--kral);color:var(--kral);background:transparent}.btn-cizgi:hover{background:var(--kral);color:#fff}
+.btn-beyaz{background:#fff;color:var(--lacivert)}.btn-beyaz:hover{background:var(--turkuaz);color:#fff}
+.btn-kucuk{min-height:44px;padding:0 18px;font-size:15px}
+.noktalar-acik{background-image:radial-gradient(rgba(20,70,160,.13) 1.5px,transparent 1.7px);background-size:18px 18px}
+
+/* üst */
+.ust .kap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+.marka{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marka img{width:42px;height:42px;border-radius:50%;background:#fff}
+.marka span{font-size:25px;font-weight:800;color:var(--lacivert);letter-spacing:-0.02em}
+.menu{display:flex;gap:30px;flex-wrap:wrap;font-weight:600;font-size:15px}
+.menu a{color:var(--metin);text-decoration:none}.menu a:hover{color:var(--kral)}
+.menu a[aria-current="page"]{color:var(--kral);box-shadow:inset 0 -2px 0 var(--kral)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:40px 0 96px}
+.hero .noktalar-acik{position:absolute;inset:0;-webkit-mask-image:linear-gradient(100deg,transparent 45%,#000 85%);mask-image:linear-gradient(100deg,transparent 45%,#000 85%)}
+.hero .kap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
+.hero-metin{display:flex;flex-direction:column;gap:24px}
+.rozet-sezon{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:var(--sis);color:var(--lacivert);font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px}
+.rozet-sezon i{width:10px;height:10px;border-radius:50%;background:var(--turkuaz)}
+.hero h1{font-size:clamp(40px,5vw,68px);line-height:1.02;letter-spacing:-0.04em}
+.hero-metin>p{font-size:20px;color:var(--soluk);max-width:560px}
+.hero-btn{display:flex;gap:12px;flex-wrap:wrap}
+.hero-gorsel{position:relative;justify-self:end;width:100%;max-width:500px;aspect-ratio:1/1}
+.hero-gorsel svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.hero-gorsel .foto{position:absolute;inset:12%;border-radius:50%;overflow:hidden;box-shadow:0 24px 60px rgba(10,42,99,.18)}
+.hero-gorsel .foto img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.hero-gorsel .not{position:absolute;background:#fff;color:var(--lacivert);font-size:14px;font-weight:700;padding:10px 14px;border-radius:999px;box-shadow:0 10px 26px rgba(10,42,99,.16);white-space:nowrap}
+.hero-gorsel .n1{left:-2%;top:16%}.hero-gorsel .n2{right:-2%;bottom:14%}
+@media (prefers-reduced-motion:no-preference){
+  .yay{stroke-dasharray:var(--u) 999;stroke-dashoffset:var(--u);animation:yayciz 1.6s cubic-bezier(.6,0,.2,1) .2s forwards}
+  @keyframes yayciz{to{stroke-dashoffset:0}}
+}
+
+/* sezonlar */
+.bolum{padding:104px 0;position:relative;overflow:hidden}
+.baslik{max-width:680px;display:flex;flex-direction:column;gap:14px;margin-bottom:48px}
+.baslik h2{font-size:clamp(30px,3.8vw,46px);line-height:1.08}
+.baslik p{font-size:19px;color:var(--soluk)}
+.sis{background:var(--sis)}
+.sezonlar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.sezon{position:relative;overflow:hidden;border-radius:26px;padding:40px 36px;display:flex;flex-direction:column;gap:14px;min-height:320px}
+.sezon::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-80px;top:-80px;border:40px solid rgba(255,255,255,.16)}
+.kis{background:var(--degrade);color:#D6E2F5}
+.yaz{background:linear-gradient(135deg,#0E7F8F 0%,#21B3B5 60%,#7FD3D4 100%);color:#062E35}
+.sezon h3{font-size:34px;line-height:1.1;color:#fff}
+.yaz h3{color:#05262C}
+.sezon .ne-zaman{font-weight:700;font-size:15px;align-self:flex-start;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.16);color:#fff}
+.yaz .ne-zaman{background:rgba(255,255,255,.55);color:#05262C}
+.sezon dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:6px 0 0}
+.sezon dt{font-weight:700}
+.sezon dd{margin:0}
+.kis dt{color:#fff}
+.sezon .btn{margin-top:auto;align-self:flex-start;position:relative;z-index:1}
+
+/* neler var */
+.ozellikler{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.ozellikler li{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:2px solid var(--cizgi)}
+.ozellikler i{width:44px;height:44px;border-radius:50%;border:6px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--halka) border-box;margin-bottom:6px}
+.ozellikler h3{font-size:20px}
+.ozellikler p{color:var(--soluk);font-size:16px}
+
+/* cta seçimi */
+.secimler{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.secim{background:#fff;border:1px solid var(--cizgi);border-radius:26px;padding:36px 32px;display:flex;flex-direction:column;gap:14px}
+.secim .etiket{align-self:flex-start;font-size:13px;font-weight:700;color:#fff;background:var(--kral);padding:5px 12px;border-radius:999px}
+.secim:nth-child(2) .etiket{background:var(--petrol-yazi)}
+.secim h3{font-size:28px;line-height:1.15}
+.secim p{color:var(--soluk)}
+.secim ul{margin:0;padding-left:18px;color:var(--metin);display:flex;flex-direction:column;gap:4px}
+.secim .btn{margin-top:auto;align-self:flex-start}
+
+/* formlar */
+.form-bolum .kap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.form-bilgi{display:flex;flex-direction:column;gap:16px;position:sticky;top:24px}
+.form-bilgi h2{font-size:clamp(30px,3.6vw,44px);line-height:1.08}
+.form-bilgi p{font-size:18px;color:var(--soluk)}
+.form-bilgi ol{margin:0;padding-left:20px;color:var(--metin);display:flex;flex-direction:column;gap:8px}
+form{display:flex;flex-direction:column;gap:22px;background:#fff;border:1px solid var(--cizgi);border-radius:26px;padding:36px;box-shadow:0 24px 60px rgba(10,42,99,.08)}
+fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
+legend{font-size:20px;font-weight:800;color:var(--lacivert);margin-bottom:14px;padding:0}
+.satir{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px;color:var(--metin)}
+label .ops{font-weight:500;color:var(--soluk)}
+input,select,textarea{min-height:50px;border:1.5px solid #C3CEDB;border-radius:12px;padding:0 14px;font-family:inherit;font-size:16px;background:#fff;color:var(--metin);width:100%}
+textarea{min-height:110px;padding:12px 14px;resize:vertical;line-height:1.5}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--kral);box-shadow:0 0 0 3px rgba(20,70,160,.2)}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#B42318}
+.secenekler{display:flex;flex-wrap:wrap;gap:10px}
+.secenekler label{flex-direction:row;align-items:center;gap:8px;font-weight:600;border:1.5px solid #C3CEDB;border-radius:999px;padding:10px 16px;cursor:pointer;min-height:44px}
+.secenekler input{width:18px;height:18px;min-height:0;accent-color:var(--kral);margin:0}
+.secenekler label:has(input:checked){border-color:var(--kral);background:#EAF0FB;color:var(--lacivert)}
+.yardim{font-size:14px;color:var(--soluk);font-weight:500}
+
+/* ürün listesi */
+.urun-ekle{background:var(--sis);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.urun-ekle .izgara{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.3fr) minmax(0,.8fr);gap:12px}
+.urun-ekle .izgara2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr) minmax(0,1fr) auto;gap:12px;align-items:end}
+.urun-listesi{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.urun-listesi li{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:14px;align-items:center;background:#fff;border:1px solid var(--cizgi);border-radius:14px;padding:12px 14px}
+.urun-listesi .no{width:36px;height:36px;border-radius:50%;background:var(--halka);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.urun-listesi b{display:block;color:var(--lacivert)}
+.urun-listesi small{color:var(--soluk);font-size:14px}
+.urun-listesi button{border:0;background:none;color:#B42318;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;min-height:44px;padding:0 6px}
+.liste-ust{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.liste-ust b{color:var(--lacivert)}
+.bos-liste{color:var(--soluk);font-size:15px;padding:14px;border:1.5px dashed #C3CEDB;border-radius:14px;text-align:center}
+.form-durum{font-weight:600;font-size:15px;color:var(--petrol-yazi);min-height:1px}
+.form-durum.hata{color:#B42318}
+.form-not{color:var(--soluk);font-size:13px}
+.ayrac{height:1px;background:var(--cizgi)}
+
+/* alt */
+.alt{background:var(--gece);color:#B9C8E2}
+.alt .kap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;padding-top:56px;padding-bottom:56px}
+.alt .marka span{color:#fff}
+.alt-slogan{font-size:22px;font-weight:800;color:#8FE3E0;margin-top:12px}
+.alt nav{display:flex;gap:56px;flex-wrap:wrap}
+.alt nav div{display:flex;flex-direction:column;gap:8px}
+.alt nav b{color:#fff}
+.alt a{color:#B9C8E2;text-decoration:none}.alt a:hover{color:#fff}
+
+@media (max-width:960px){
+  .hero .kap,.form-bolum .kap{grid-template-columns:minmax(0,1fr)}
+  .hero-gorsel{justify-self:center;max-width:420px}
+  .form-bilgi{position:static}
+  .sezonlar,.secimler{grid-template-columns:minmax(0,1fr)}
+  .ozellikler{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bolum{padding:80px 0}
+}
+@media (max-width:560px){
+  .ust .kap{row-gap:12px}
+  .menu{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;gap:22px;padding:4px 2px 8px;scrollbar-width:none}
+  .menu::-webkit-scrollbar{display:none}
+  .menu a{white-space:nowrap;padding:6px 0}
+  .ozellikler,.satir,.urun-ekle .izgara,.urun-ekle .izgara2{grid-template-columns:minmax(0,1fr)}
+  form{padding:24px 18px}
+  .sezon{padding:32px 24px}
+  .hero-gorsel .not{font-size:13px;padding:8px 12px}
+}
+</style>
+</head>
+<body>
+<a class="atla" href="#icerik">İçeriğe atla</a>
+
+<header class="ust">
+  <div class="kap">
+    <a class="marka" href="/"><img src="/assets/dongu-icon.webp" alt=""><span>Döngü</span></a>
+    <nav class="menu" aria-label="Ana menü">
+      <a href="/#neden">Neden Döngü?</a>
+      <a href="/#gardirop">Gardırop</a>
+      <a href="/#kurumlar">Kurumlar için</a>
+      <a href="/etkinlikler" aria-current="page">Etkinlikler</a>
+      <a href="/#fiyat">Fiyatlar</a>
+    </nav>
+    <a class="btn btn-ana" href="#katil">Pop-up'a katıl</a>
+  </div>
+</header>
+
+<main id="icerik" tabindex="-1">
+<section class="hero">
+  <div class="noktalar-acik" aria-hidden="true"></div>
+  <div class="kap">
+    <div class="hero-metin">
+      <span class="rozet-sezon"><i aria-hidden="true"></i>Kış ve yaz sezonunda, yılda iki kez</span>
+      <h1>Döngü Pop-up Mağaza</h1>
+      <p>Döngü, proje ortaklarıyla yılda iki kez, kış ve yaz sezonunda fiziksel alışveriş için bir pop-up mağaza kuruyor. İkinci el ya da kendi ürünlerinizle stant açabilir, ya da kendi pop-up bazaar'ınızı birlikte düzenleyebiliriz.</p>
+      <div class="hero-btn">
+        <a class="btn btn-ana" href="#katil">Ürünlerimle katılmak istiyorum</a>
+        <a class="btn btn-cizgi" href="#bazaar">Kendi bazaar'ımı düzenlemek istiyorum</a>
+      </div>
+    </div>
+    <div class="hero-gorsel">
+      <svg viewBox="0 0 500 500" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#21B3B5"/><stop offset="1" stop-color="#1446A0"/></linearGradient></defs>
+        <circle class="yay" cx="250" cy="250" r="232" fill="none" stroke="url(#hg)" stroke-width="30" stroke-linecap="round" pathLength="300" style="--u:225" transform="rotate(130 250 250)"/></svg>
+      <div class="foto"><img src="/assets/kampanya.webp" alt="Kampüste yürüyen iki üniversite öğrencisi" width="898" height="1204"></div>
+      <span class="not n1" aria-hidden="true">Kış sezonu</span>
+      <span class="not n2" aria-hidden="true">Yaz sezonu</span>
+    </div>
+  </div>
+</section>
+
+<section class="bolum sis" aria-labelledby="sezon-baslik">
+  <div class="kap">
+    <div class="baslik">
+      <h2 id="sezon-baslik">Yaklaşan pop-up mağazalar</h2>
+      <p>Tarih ve mekânlar proje ortaklarımızla birlikte belirleniyor. Başvuranlara ilk olarak haber veriyoruz.</p>
+    </div>
+    <div class="sezonlar">
+      <article class="sezon kis">
+        <span class="ne-zaman">Kış sezonu</span>
+        <h3>Döngü Kış Pop-up</h3>
+        <dl>
+          <dt>Tarih</dt><dd>[TARİH]</dd>
+          <dt>Mekân</dt><dd>[MEKÂN], İstanbul</dd>
+          <dt>Öne çıkanlar</dt><dd>Mont, kaban, triko, bot</dd>
+        </dl>
+        <a class="btn btn-beyaz btn-kucuk" href="#katil">Kış pop-up'ına başvur</a>
+      </article>
+      <article class="sezon yaz">
+        <span class="ne-zaman">Yaz sezonu</span>
+        <h3>Döngü Yaz Pop-up</h3>
+        <dl>
+          <dt>Tarih</dt><dd>[TARİH]</dd>
+          <dt>Mekân</dt><dd>[MEKÂN], İstanbul</dd>
+          <dt>Öne çıkanlar</dt><dd>Keten, elbise, sneaker, aksesuar</dd>
+        </dl>
+        <a class="btn btn-ana btn-kucuk" href="#katil">Yaz pop-up'ına başvur</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bolum" aria-labelledby="neler-baslik">
+  <div class="kap">
+    <div class="baslik">
+      <h2 id="neler-baslik">Pop-up mağazada neler var?</h2>
+    </div>
+    <ul class="ozellikler">
+      <li><i aria-hidden="true"></i><h3>İkinci el stantlar</h3><p>Dolabındaki iyi durumdaki parçaları satan bireyler ve iyilik butikleri.</p></li>
+      <li><i aria-hidden="true"></i><h3>Tasarımcı ve markalar</h3><p>Kendi ürünlerini getiren bağımsız tasarımcılar ve sürdürülebilir markalar.</p></li>
+      <li><i aria-hidden="true"></i><h3>Öğrenci köşesi</h3><p>Doğrulanmış öğrenciler için ücretsiz seçim alanı ve Kariyer Gardırobu.</p></li>
+      <li><i aria-hidden="true"></i><h3>Bağış noktası</h3><p>Getirdiğiniz kıyafetler kalite kontrolden geçip Döngü ağına katılır.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="bolum sis" aria-labelledby="secim-baslik">
+  <div class="kap">
+    <div class="baslik">
+      <h2 id="secim-baslik">Nasıl yer almak istersiniz?</h2>
+      <p>İki yol var. Size uygun olanı seçin, formu doldurun; ekibimiz sizinle iletişime geçsin.</p>
+    </div>
+    <div class="secimler">
+      <article class="secim">
+        <span class="etiket">Stant aç</span>
+        <h3>Pop-up mağazada ürünlerimle yer almak istiyorum</h3>
+        <p>İkinci el kıyafetlerinizle ya da kendi markanızın ürünleriyle kış veya yaz pop-up'ında stant açın.</p>
+        <ul><li>Bireysel ikinci el satıcılar</li><li>Bağımsız tasarımcı ve markalar</li><li>İyilik butikleri ve dernekler</li></ul>
+        <a class="btn btn-ana" href="#katil">Katılım formunu doldur</a>
+      </article>
+      <article class="secim">
+        <span class="etiket">Bazaar düzenle</span>
+        <h3>Kendi pop-up bazaar'ımı düzenlemek istiyorum</h3>
+        <p>Okulunuzda, şirketinizde ya da topluluğunuzda kişisel veya kurumsal bir pop-up bazaar buluşması yapalım. Altyapıyı ve deneyimi Döngü getirsin.</p>
+        <ul><li>Kampüs ve okul etkinlikleri</li><li>Şirket içi takas ve bağış günleri</li><li>Mahalle ve topluluk buluşmaları</li></ul>
+        <a class="btn btn-cizgi" href="#bazaar">Bazaar talebi oluştur</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FORM 1: katılım -->
+<section class="bolum form-bolum" id="katil" aria-labelledby="katil-baslik">
+  <div class="kap">
+    <div class="form-bilgi">
+      <h2 id="katil-baslik">Pop-up mağazaya katılım formu</h2>
+      <p>İkinci el ya da kendi ürünlerinizle stant açmak için bilgilerinizi ve getireceğiniz ürünleri ekleyin.</p>
+      <ol>
+        <li>Kendinizi ve katılmak istediğiniz sezonu seçin.</li>
+        <li>Getireceğiniz ürünleri tek tek listeye ekleyin.</li>
+        <li>Ekibimiz başvurunuzu değerlendirip stant ve ürün kabulü için size dönsün.</li>
+      </ol>
+    </div>
+
+    <form id="katilim-form" novalidate>
+      <fieldset>
+        <legend>1. Sizi tanıyalım</legend>
+        <div class="satir">
+          <label>Ad soyad ya da marka adı<input type="text" name="ad" autocomplete="name" required></label>
+          <label>E-posta<input type="email" name="eposta" autocomplete="email" required></label>
+        </div>
+        <div class="satir">
+          <label><span>Telefon <span class="ops">(isteğe bağlı)</span></span><input type="tel" name="telefon" autocomplete="tel" inputmode="tel"></label>
+          <label><span>Instagram ya da web sitesi <span class="ops">(isteğe bağlı)</span></span><input type="text" name="baglanti" placeholder="@kullaniciadi"></label>
+        </div>
+        <div>
+          <span id="kim-etiket" style="display:block;font-weight:700;font-size:15px;margin-bottom:8px">Hangi kategoridesiniz?</span>
+          <div class="secenekler" role="radiogroup" aria-labelledby="kim-etiket">
+            <label><input type="radio" name="kim" value="bireysel" required> Bireysel ikinci el</label>
+            <label><input type="radio" name="kim" value="marka"> Kendi markam / tasarımcı</label>
+            <label><input type="radio" name="kim" value="kurum"> Dernek ya da iyilik butiği</label>
+          </div>
+        </div>
+        <div>
+          <span id="sezon-etiket" style="display:block;font-weight:700;font-size:15px;margin-bottom:8px">Hangi sezona katılmak istersiniz?</span>
+          <div class="secenekler" role="group" aria-labelledby="sezon-etiket">
+            <label><input type="checkbox" name="sezon" value="kis"> Kış pop-up</label>
+            <label><input type="checkbox" name="sezon" value="yaz"> Yaz pop-up</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="ayrac" aria-hidden="true"></div>
+
+      <fieldset>
+        <legend>2. Ürünlerinizi ekleyin</legend>
+        <div class="urun-ekle">
+          <div class="izgara">
+            <label>Ürün adı<input type="text" id="u-ad" placeholder="Örn. Lacivert yün kaban"></label>
+            <label>Kategori
+              <select id="u-kat">
+                <option>Kadın giyim</option><option>Erkek giyim</option><option>Unisex</option><option>Ayakkabı</option><option>Çanta ve aksesuar</option><option>Çocuk</option>
+              </select>
+            </label>
+            <label>Beden<input type="text" id="u-beden" placeholder="S, M, 38…"></label>
+          </div>
+          <div class="izgara2">
+            <label>Durum
+              <select id="u-durum">
+                <option>Yeni, etiketli</option><option>Yeni gibi</option><option>Çok iyi</option><option>İyi</option>
+              </select>
+            </label>
+            <label>Adet<input type="number" id="u-adet" min="1" max="99" value="1" inputmode="numeric"></label>
+            <label><span>Fiyat önerisi <span class="ops">(TL, isteğe bağlı)</span></span><input type="number" id="u-fiyat" min="0" inputmode="numeric"></label>
+            <button type="button" class="btn btn-ana btn-kucuk" id="u-ekle">Listeye ekle</button>
+          </div>
+          <p class="yardim" id="u-yardim">Her ürünü ayrı ekleyin. Listeyi göndermeden önce düzenleyebilirsiniz.</p>
+        </div>
+
+        <div class="liste-ust"><b>Ürün listeniz</b><span id="u-sayac" class="yardim">0 ürün</span></div>
+        <ul class="urun-listesi" id="u-liste" aria-live="polite"></ul>
+        <p class="bos-liste" id="u-bos">Henüz ürün eklemediniz.</p>
+      </fieldset>
+
+      <label><span>Eklemek istedikleriniz <span class="ops">(isteğe bağlı)</span></span><textarea name="not" placeholder="Stant ihtiyacınız, ürünlerin genel tarzı gibi"></textarea></label>
+
+      <button class="btn btn-ana" type="submit">Katılım başvurusunu gönder</button>
+      <p class="form-durum" role="status" aria-live="polite"></p>
+      <p class="form-not">Bilgileriniz yalnızca pop-up mağaza başvurunuzla ilgili sizinle iletişim kurmak için kullanılır.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FORM 2: bazaar talebi -->
+<section class="bolum form-bolum sis" id="bazaar" aria-labelledby="bazaar-baslik">
+  <div class="kap">
+    <div class="form-bilgi">
+      <h2 id="bazaar-baslik">Kendi pop-up bazaar'ınızı düzenleyin</h2>
+      <p>Kişisel ya da kurumsal bir pop-up bazaar buluşması için talep oluşturun. Mekânı siz sağlayın ya da birlikte bulalım; askılar, düzen, kalite kontrol ve dijital envanter Döngü'den.</p>
+      <ol>
+        <li>Talebinizi ve tahmini katılımı paylaşın.</li>
+        <li>Birlikte tarih, mekân ve formatı netleştirelim.</li>
+        <li>Etkinlik sonrası etki raporunuzu sizinle paylaşalım.</li>
+      </ol>
+    </div>
+
+    <form id="bazaar-form" novalidate>
+      <fieldset>
+        <legend>1. Talep türü</legend>
+        <div class="secenekler" role="radiogroup" aria-label="Talep türü">
+          <label><input type="radio" name="tur" value="kisisel" required> Kişisel</label>
+          <label><input type="radio" name="tur" value="kurumsal"> Kurumsal</label>
+        </div>
+        <div class="satir">
+          <label>Ad soyad<input type="text" name="ad" autocomplete="name" required></label>
+          <label><span>Kurum ya da topluluk adı <span class="ops">(kurumsalsa)</span></span><input type="text" name="kurum" autocomplete="organization"></label>
+        </div>
+        <div class="satir">
+          <label>E-posta<input type="email" name="eposta" autocomplete="email" required></label>
+          <label><span>Telefon <span class="ops">(isteğe bağlı)</span></span><input type="tel" name="telefon" autocomplete="tel" inputmode="tel"></label>
+        </div>
+      </fieldset>
+
+      <div class="ayrac" aria-hidden="true"></div>
+
+      <fieldset>
+        <legend>2. Etkinlik bilgileri</legend>
+        <div class="satir">
+          <label>Bazaar türü
+            <select name="format" required>
+              <option value="">Seçin</option>
+              <option>İkinci el satış</option>
+              <option>Takas</option>
+              <option>Bağış ve ücretsiz seçim</option>
+              <option>Karma (satış, takas, bağış)</option>
+            </select>
+          </label>
+          <label><span>Tercih edilen tarih <span class="ops">(yaklaşık)</span></span><input type="month" name="tarih"></label>
+        </div>
+        <div class="satir">
+          <label>Şehir ve semt<input type="text" name="yer" placeholder="Örn. İstanbul, Kadıköy" required></label>
+          <label>Mekân durumu
+            <select name="mekan">
+              <option>Mekânımız var</option>
+              <option>Mekân arıyoruz</option>
+              <option>Henüz bilmiyoruz</option>
+            </select>
+          </label>
+        </div>
+        <div class="satir">
+          <label>Tahmini ziyaretçi sayısı
+            <select name="ziyaretci">
+              <option>50'den az</option><option>50–200</option><option>200–500</option><option>500'den fazla</option>
+            </select>
+          </label>
+          <label>Tahmini ürün sayısı
+            <select name="urun">
+              <option>100'den az</option><option>100–500</option><option>500–1.000</option><option>1.000'den fazla</option>
+            </select>
+          </label>
+        </div>
+        <label>Etkinlikten beklentiniz<textarea name="aciklama" placeholder="Kimler için, ne amaçla düzenlemek istiyorsunuz?" required></textarea></label>
+      </fieldset>
+
+      <button class="btn btn-ana" type="submit">Bazaar talebini oluştur</button>
+      <p class="form-durum" role="status" aria-live="polite"></p>
+      <p class="form-not">Bilgileriniz yalnızca bazaar talebinizle ilgili sizinle iletişim kurmak için kullanılır.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="alt">
+  <div class="kap">
+    <div>
+      <a class="marka" href="/"><img loading="lazy" decoding="async" src="/assets/dongu-icon.webp" alt=""><span>Döngü</span></a>
+      <p class="alt-slogan">Paylaştıkça güzelleşir dünya.</p>
+      <p>İstanbul</p>
+    </div>
+    <nav aria-label="Alt menü">
+      <div><b>Ürün</b><a href="/#kurumlar">Kurumlar için</a><a href="/#ogrenciler">Öğrenciler</a><a href="/#fiyat">Fiyatlar</a></div>
+      <div><b>Etkinlikler</b><a href="#katil">Pop-up'a katıl</a><a href="#bazaar">Bazaar düzenle</a></div>
+      <div><b>İletişim</b><span>[E-POSTA]</span><span>[INSTAGRAM]</span></div>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ürün listesi */
+  var urunler=[];
+  var liste=document.getElementById('u-liste'), bos=document.getElementById('u-bos'), sayac=document.getElementById('u-sayac');
+  var ad=document.getElementById('u-ad'), kat=document.getElementById('u-kat'), beden=document.getElementById('u-beden'),
+      durum=document.getElementById('u-durum'), adet=document.getElementById('u-adet'), fiyat=document.getElementById('u-fiyat'),
+      yardim=document.getElementById('u-yardim');
+  function ciz(){
+    liste.innerHTML='';
+    urunler.forEach(function(u,i){
+      var li=document.createElement('li');
+      var no=document.createElement('span');no.className='no';no.setAttribute('aria-hidden','true');no.textContent=i+1;
+      var d=document.createElement('div');
+      var b=document.createElement('b');b.textContent=u.ad+(u.adet>1?' ×'+u.adet:'');
+      var s=document.createElement('small');s.textContent=[u.kat,u.beden?'Beden '+u.beden:'',u.durum,u.fiyat?u.fiyat+' TL':''].filter(Boolean).join(', ');
+      d.appendChild(b);d.appendChild(s);
+      var x=document.createElement('button');x.type='button';x.textContent='Kaldır';x.setAttribute('aria-label',u.ad+' ürününü listeden kaldır');
+      x.addEventListener('click',function(){urunler.splice(i,1);ciz();ad.focus();});
+      li.appendChild(no);li.appendChild(d);li.appendChild(x);liste.appendChild(li);
+    });
+    var toplam=urunler.reduce(function(t,u){return t+u.adet},0);
+    sayac.textContent=urunler.length+' ürün'+(toplam>urunler.length?', toplam '+toplam+' adet':'');
+    bos.style.display=urunler.length?'none':'block';
+  }
+  document.getElementById('u-ekle').addEventListener('click',function(){
+    var a=ad.value.trim();
+    if(!a){ad.setAttribute('aria-invalid','true');yardim.textContent='Ürünü eklemek için önce ürün adını yazın.';yardim.style.color='#B42318';ad.focus();return;}
+    ad.removeAttribute('aria-invalid');yardim.style.color='';yardim.textContent='Her ürünü ayrı ekleyin. Listeyi göndermeden önce düzenleyebilirsiniz.';
+    urunler.push({ad:a,kat:kat.value,beden:beden.value.trim(),durum:durum.value,adet:Math.max(1,parseInt(adet.value,10)||1),fiyat:fiyat.value.trim()});
+    ad.value='';beden.value='';adet.value=1;fiyat.value='';ciz();ad.focus();
+  });
+  ad.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.getElementById('u-ekle').click();}});
+  ciz();
+
+  /* form doğrulama */
+  function hazirla(form,ek){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var d=form.querySelector('.form-durum');
+      form.querySelectorAll('[aria-invalid]').forEach(function(x){x.removeAttribute('aria-invalid')});
+      var gecersiz=[].slice.call(form.querySelectorAll('input,select,textarea')).filter(function(x){return !x.checkValidity()});
+      gecersiz.forEach(function(x){x.setAttribute('aria-invalid','true')});
+      var mesaj=ek?ek():'';
+      if(gecersiz.length||mesaj){
+        d.classList.add('hata');
+        d.textContent=gecersiz.length?'Lütfen zorunlu alanları doldurun ve geçerli bir e-posta adresi girin.':mesaj;
+        (gecersiz[0]||ad).focus();return;
+      }
+      d.classList.remove('hata');
+      d.textContent='Teşekkürler. Form şu an deneme aşamasında, bilgileriniz henüz bize iletilmiyor. Çok yakında aktif olacak.';
+    });
+  }
+  hazirla(document.getElementById('katilim-form'),function(){return urunler.length?'':'Lütfen getireceğiniz en az bir ürünü listeye ekleyin.'});
+  hazirla(document.getElementById('bazaar-form'));
+})();
+</script>
+</body>
+</html>
