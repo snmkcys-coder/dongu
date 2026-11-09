@@ -102,6 +102,15 @@ p{margin:0}
 .ortaklar ul{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap}
 .ortaklar li{min-width:150px;padding:12px 18px;border:1.5px dashed #B3C0CE;border-radius:999px;text-align:center;font-weight:700;font-size:14px;color:var(--soluk)}
 
+/* video */
+.video-bolum{padding:96px 0 24px}
+.video-ic{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:56px;align-items:center}
+.video-ic h2{font-size:clamp(32px,4vw,50px);line-height:1.06}
+.video-ic p{font-size:19px;color:var(--soluk);margin-top:16px}
+.video-ic small{display:block;margin-top:20px;font-size:14px;color:var(--soluk)}
+.video-cerceve{position:relative;border-radius:26px;overflow:hidden;background:var(--sis);box-shadow:0 24px 60px rgba(10,42,99,.14);aspect-ratio:16/9}
+.video-cerceve video{display:block;width:100%;height:100%;object-fit:cover}
+
 /* adımlar */
 .dekor-halka{position:absolute;border-radius:50%;pointer-events:none}
 .dh1{width:520px;height:520px;right:-180px;top:-160px;border:56px solid var(--sis)}
@@ -270,6 +279,7 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
   .k-foto{aspect-ratio:4/5}
   .k-mavi{min-height:440px}
   .kurumlar,.planlar{grid-template-columns:minmax(0,1fr)}
+  .video-ic{grid-template-columns:minmax(0,1fr);gap:28px}
   .kod{grid-template-columns:minmax(0,1fr)}
   .bolum{padding:88px 0}
   .ogrenci-gorsel{justify-self:center}
@@ -347,6 +357,19 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
       <li>[İYİLİK PLATFORMU]</li>
       <li>[SPONSOR]</li>
     </ul>
+  </div>
+</section>
+
+<section class="video-bolum" id="neden" aria-labelledby="v-baslik">
+  <div class="kap video-ic">
+    <div>
+      <h2 id="v-baslik">Neden Döngü?</h2>
+      <p>Dünyada her yıl 92 milyon ton tekstil atığı oluşuyor. Kullanılan liflerin yalnızca %8'i geri dönüştürülmüş kaynaktan geliyor. İyi durumdaki her kıyafet, yeni bir sahibe ulaşmayı hak ediyor.</p>
+      <small>Kaynak: UNEP, Ekim 2025, Transforming the Textile Industry</small>
+    </div>
+    <div class="video-cerceve">
+      <video src="/assets/video/tekstil-atigi.mp4" poster="/assets/video/tekstil-atigi-kapak.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="Dünyada tekstil atığının boyutunu dört rakamla anlatan video"></video>
+    </div>
   </div>
 </section>
 
