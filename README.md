@@ -24,3 +24,7 @@ Köşeli parantez içindeki alanlar (`[ÜNİVERSİTE]`, `[FİYAT]`, `[ADET]`, `[
 ## Güvenlik
 
 Güvenlik başlıkları (CSP, nosniff, frame-ancestors) `vercel.json` içinde tanımlıdır. `.env` dosyaları `.gitignore` ile dışarıda tutulur; anahtar/şifre depoya eklenmemelidir.
+
+## Arama motorları
+
+Site şu an arama motorlarından gizli: `index.html` ve `etkinlikler.html` içinde `noindex` etiketi, `robots.txt` ve `vercel.json` içinde `X-Robots-Tag` başlığı var. Yayına hazır olunca üçü de kaldırılmalı.
