@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Döngü – Döngüsel moda altyapısı</title>
+<meta name="description" content="Döngü; ikinci el butiklerin, iyilik platformlarının ve üniversitelerin bağış kabul, kalite kontrol ve öğrenci erişimi altyapısı.">
+<meta property="og:title" content="Döngü – İyi durumdaki her kıyafet, doğru kişiye ulaşsın.">
+<meta property="og:description" content="Giyilmeyen kıyafetleri öğrencilere ve iyilik butiklerine ulaştıran döngüsel moda altyapısı.">
+<meta property="og:image" content="/assets/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0}
+a{color:#0A3478}a:hover{color:#0F6E7F}
+section[id]{scroll-margin-top:24px}
+@media (max-width:640px){h1{font-size:40px!important}h2{font-size:30px!important}#yonlendirme-baslik{font-size:28px!important}}
+</style>
+</head>
+<body><div style="font-family: 'Nunito', system-ui, sans-serif; background: #FDFAF2; color: #1F2A37; line-height: 1.6">
+
+<header style="border-bottom: 1px solid #E7E1D3; background: #FDFAF2">
+<div style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+<img src="assets/dongu-icon.png" alt="" style="width: 44px; height: 44px; border-radius: 8px">
+<span style="font-size: 26px; font-weight: 700; color: #0A3478; letter-spacing: -0.5px">Döngü</span>
+</a>
+<nav aria-label="Ana menü" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-weight: 600; font-size: 16px">
+<a href="#nasil" style="text-decoration: none">Nasıl çalışır</a>
+<a href="#kurumlar" style="text-decoration: none">Kurumlar için</a>
+<a href="#ogrenciler" style="text-decoration: none">Öğrenciler</a>
+<a href="#etki" style="text-decoration: none">Etki</a>
+<a href="#fiyat" style="text-decoration: none">Fiyatlar</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#giris" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1.5px solid #0A3478; border-radius: 999px; font-weight: 700; text-decoration: none; color: #0A3478">Kurum girişi</a>
+<a href="#demo" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 700; text-decoration: none; color: #FFFFFF; background: #0F6E7F">Demo talep et</a>
+</div>
+</div>
+</header>
+
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 80px 24px 72px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<span style="align-self: flex-start; background: #E8F2D2; color: #2F4A0C; font-weight: 700; font-size: 14px; padding: 6px 14px; border-radius: 999px">Döngüsel moda altyapısı</span>
+<h1 style="margin: 0; font-size: 56px; line-height: 1.08; font-weight: 800; color: #0A3478; letter-spacing: -1.5px">İyi durumdaki her kıyafet, doğru kişiye ulaşsın.</h1>
+<p style="margin: 0; font-size: 20px; color: #3D4A5C; max-width: 560px">Döngü; ikinci el butiklerin, iyilik platformlarının ve üniversitelerin bağış kabul, kalite kontrol ve öğrenci erişimi altyapısı. Siz amacınıza odaklanın, operasyonu biz yürütelim.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<a href="#demo" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 800; font-size: 17px; text-decoration: none; color: #FFFFFF; background: #0F6E7F">Kurumunuz için demo talep edin</a>
+<a href="#bagis" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 800; font-size: 17px; text-decoration: none; color: #0A3478; background: #FFFFFF; border: 1.5px solid #CFC8B6">Kıyafet bağışla</a>
+</div>
+<p style="margin: 0; font-size: 14px; color: #5B6575">Öğrenci misiniz? <a href="#ogrenciler" style="font-weight: 700">Okulunuzun Döngü gardırobunu bulun</a></p>
+</div>
+
+<div style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
+<span style="font-weight: 800; color: #0A3478; font-size: 18px">Yeni bağış</span>
+<span style="font-size: 13px; font-weight: 700; color: #0B5563; background: #E2F1F3; padding: 4px 10px; border-radius: 999px">Kalite kontrol tamamlandı</span>
+</div>
+<div style="display: flex; gap: 16px; align-items: center">
+<div style="width: 88px; height: 104px; border-radius: 12px; background: #E9E4D8; display: flex; align-items: center; justify-content: center; color: #6B6455; font-size: 12px; text-align: center; flex-shrink: 0">[ÜRÜN FOTOĞRAFI]</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 700; font-size: 17px">Lacivert blazer ceket</span>
+<span style="font-size: 14px; color: #5B6575">Beden M · Çok iyi durumda · Günlük marka</span>
+<span style="font-size: 14px; color: #5B6575">Bağışçı: Kadıköy teslim noktası</span>
+</div>
+</div>
+<div style="border-top: 1px dashed #E1DACA; padding-top: 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; color: #5B6575; text-transform: uppercase; letter-spacing: 1px">Akıllı yönlendirme önerisi</span>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #EEF6E0; border: 1.5px solid #8DBB2A; border-radius: 12px; padding: 12px 14px">
+<span style="font-weight: 700; color: #1E4D33">Kariyer Gardırobu · [ÜNİVERSİTE]</span>
+<span style="font-size: 13px; font-weight: 700; color: #2F4A0C">Önerilen</span>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid #E7E1D3; border-radius: 12px; padding: 12px 14px">
+<span style="color: #3D4A5C">Öğrenci gardırobu · ücretsiz</span>
+<span style="font-size: 13px; color: #5B6575">Alternatif</span>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid #E7E1D3; border-radius: 12px; padding: 12px 14px">
+<span style="color: #3D4A5C">İyilik butiği satış kanalı</span>
+<span style="font-size: 13px; color: #5B6575">Alternatif</span>
+</div>
+</div>
+<button type="button" style="min-height: 48px; border: 0; border-radius: 12px; background: #0A3478; color: #FFFFFF; font-family: inherit; font-weight: 800; font-size: 16px; cursor: pointer">Onayla ve yönlendir</button>
+</div>
+</section>
+
+<section aria-label="Pilot ortaklar" style="border-top: 1px solid #E7E1D3; border-bottom: 1px solid #E7E1D3; background: #F7F2E6">
+<div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+<span style="font-weight: 700; color: #3D4A5C">Pilot ortaklarımız</span>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<span style="min-width: 150px; height: 48px; border: 1px dashed #BDB49E; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #6B6455; font-size: 14px; font-weight: 700">[ÜNİVERSİTE]</span>
+<span style="min-width: 150px; height: 48px; border: 1px dashed #BDB49E; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #6B6455; font-size: 14px; font-weight: 700">[DERNEK]</span>
+<span style="min-width: 150px; height: 48px; border: 1px dashed #BDB49E; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #6B6455; font-size: 14px; font-weight: 700">[İYİLİK PLATFORMU]</span>
+<span style="min-width: 150px; height: 48px; border: 1px dashed #BDB49E; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #6B6455; font-size: 14px; font-weight: 700">[SPONSOR]</span>
+</div>
+</div>
+</section>
+
+<section id="nasil" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 40px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<span style="font-weight: 800; color: #0F6E7F; font-size: 15px; letter-spacing: 1px; text-transform: uppercase">Nasıl çalışır</span>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 800; color: #0A3478; letter-spacing: -1px">Dolaptan çıkan kıyafet, dört adımda yeni sahibine.</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 999px; background: #0A3478; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center">1</span>
+<h3 style="margin: 0; font-size: 20px; color: #0A3478">Bağış gelir</h3>
+<p style="margin: 0; color: #3D4A5C">Bağışçı fotoğraf yükler, teslim noktasını seçer. Form kurumun kendi sitesinde çalışır.</p>
+</div>
+<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 999px; background: #0A3478; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center">2</span>
+<h3 style="margin: 0; font-size: 20px; color: #0A3478">Kalite kontrol</h3>
+<p style="margin: 0; color: #3D4A5C">AI kategori, beden ve kondisyon bilgilerini önerir. Son kararı kalite ekibi verir.</p>
+</div>
+<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 999px; background: #0A3478; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center">3</span>
+<h3 style="margin: 0; font-size: 20px; color: #0A3478">Akıllı yönlendirme</h3>
+<p style="margin: 0; color: #3D4A5C">Her ürün değerine göre doğru kanala gider: satış, öğrenci gardırobu ya da geri dönüşüm.</p>
+</div>
+<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 999px; background: #0A3478; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center">4</span>
+<h3 style="margin: 0; font-size: 20px; color: #0A3478">Etki raporu</h3>
+<p style="margin: 0; color: #3D4A5C">Bağışçı ürününün kime ulaştığını görür. Kurum ve sponsorlar rakamları tek ekranda izler.</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="yonlendirme-baslik" style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 96px">
+<div style="background: #0A3478; color: #FFFFFF; border-radius: 24px; padding: 48px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<h2 id="yonlendirme-baslik" style="margin: 0; font-size: 34px; line-height: 1.2; font-weight: 800; letter-spacing: -0.5px">Hiçbir bağış boşa gitmez.</h2>
+<p style="margin: 0; font-size: 18px; color: #D6DEF0">Lüks bir ceket bir iyilik butiğinde bursa dönüşür. Sağlam bir kot, bir öğrencinin gardırobuna girer. Döngü ağındaki kurumlar birbirini besler.</p>
+</div>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; background: #16418A; border-radius: 12px; padding: 16px 20px">
+<span style="font-weight: 700">Premium ve lüks markalar</span>
+<span style="color: #C9F07A; font-weight: 700">→ İyilik butiği satış kanalı</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; background: #16418A; border-radius: 12px; padding: 16px 20px">
+<span style="font-weight: 700">Kaliteli günlük giyim</span>
+<span style="color: #C9F07A; font-weight: 700">→ Öğrenciye ücretsiz</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; background: #16418A; border-radius: 12px; padding: 16px 20px">
+<span style="font-weight: 700">Ceket, takım, gömlek</span>
+<span style="color: #C9F07A; font-weight: 700">→ Üniversite Kariyer Gardırobu</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; background: #16418A; border-radius: 12px; padding: 16px 20px">
+<span style="font-weight: 700">Kullanılamayacak durumda</span>
+<span style="color: #C9F07A; font-weight: 700">→ Tekstil geri dönüşümü</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="kurumlar" style="background: #F7F2E6; border-top: 1px solid #E7E1D3; border-bottom: 1px solid #E7E1D3">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span style="font-weight: 800; color: #0F6E7F; font-size: 15px; letter-spacing: 1px; text-transform: uppercase">Kurumlar için</span>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 800; color: #0A3478; letter-spacing: -1px">Tek altyapı, sizin markanız.</h2>
+<p style="margin: 0; font-size: 18px; color: #3D4A5C">Döngü'yü kendi sitenize, uygulamanıza ya da kampüsünüze en uygun yolla bağlayın. Yazılım ekibi gerekmez.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="align-self: flex-start; font-size: 13px; font-weight: 800; color: #0B5563; background: #E2F1F3; padding: 4px 12px; border-radius: 999px">Gömülebilir widget</span>
+<h3 style="margin: 0; font-size: 24px; color: #0A3478">İkinci el butikler ve dernekler</h3>
+<p style="margin: 0; color: #3D4A5C">Tek satır kodla bağış formu ve katalog kendi sitenizde. Envanter, kalite kontrol ve bağışçı bildirimleri otomatik.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A5C; display: flex; flex-direction: column; gap: 6px">
+<li>Bağış kabul formu</li>
+<li>Envanter ve AI ile listeleme</li>
+<li>Bağışçıya etki bildirimi</li>
+</ul>
+<a href="#demo" style="margin-top: auto; font-weight: 800; text-decoration: none">Widget'ı inceleyin →</a>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="align-self: flex-start; font-size: 13px; font-weight: 800; color: #0B5563; background: #E2F1F3; padding: 4px 12px; border-radius: 999px">API entegrasyonu</span>
+<h3 style="margin: 0; font-size: 24px; color: #0A3478">İyilik ve ikinci el platformları</h3>
+<p style="margin: 0; color: #3D4A5C">Kalite kontrolden geçmiş, fotoğraflanmış ürünler doğrudan kendi uygulamanıza aksın. Satış durumu iki yönlü senkronize olur.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A5C; display: flex; flex-direction: column; gap: 6px">
+<li>Hazır ürün akışı</li>
+<li>Bağış toplama operasyonu</li>
+<li>Pop-up etkinlik stoğu</li>
+</ul>
+<a href="#demo" style="margin-top: auto; font-weight: 800; text-decoration: none">API belgelerine bakın →</a>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="align-self: flex-start; font-size: 13px; font-weight: 800; color: #0B5563; background: #E2F1F3; padding: 4px 12px; border-radius: 999px">Markalı site</span>
+<h3 style="margin: 0; font-size: 24px; color: #0A3478">Üniversiteler ve okullar</h3>
+<p style="margin: 0; color: #3D4A5C">Kariyer Gardırobu ya da öğrenci butiği, kendi logonuz ve alan adınızla. Öğrenci doğrulama, kota ve randevu hazır.</p>
+<ul style="margin: 0; padding-left: 20px; color: #3D4A5C; display: flex; flex-direction: column; gap: 6px">
+<li>.edu.tr ile tek adımda doğrulama</li>
+<li>Dönem kotası ve randevuyla seçim</li>
+<li>Sponsorlara etki raporu</li>
+</ul>
+<a href="#demo" style="margin-top: auto; font-weight: 800; text-decoration: none">Kampüs pilotu planlayın →</a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; background: #1F2A37; border-radius: 16px; padding: 24px 28px">
+<span style="color: #FFFFFF; font-weight: 700; flex: 1 1 220px">Sitenize eklemek bu kadar kolay:</span>
+<code style="flex: 3 1 520px; min-width: 0; overflow-x: auto; white-space: nowrap; font-family: ui-monospace, Menlo, monospace; font-size: 14px; color: #C9F07A; background: #111827; border-radius: 10px; padding: 14px 16px">&lt;script src="https://dongu.app/widget.js" data-kurum="[KURUM-KODU]"&gt;&lt;/script&gt;</code>
+</div>
+</div>
+</section>
+
+<section id="ogrenciler" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<span style="font-weight: 800; color: #0F6E7F; font-size: 15px; letter-spacing: 1px; text-transform: uppercase">Öğrenciler için</span>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 800; color: #0A3478; letter-spacing: -1px">Mülakata, staja, ilk işine hazır.</h2>
+<p style="margin: 0; font-size: 18px; color: #3D4A5C">Okul e-postanla giriş yap, bedenini seç, ihtiyacın olanı ayırt. Kampüsteki Döngü noktasından randevuyla teslim al. Kimse sana neden istediğini sormaz.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#ogrenci-giris" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 800; text-decoration: none; color: #FFFFFF; background: #0F6E7F">Okul e-postamla giriş yap</a>
+</div>
+</div>
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 200px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="height: 160px; border-radius: 10px; background: #E9E4D8; display: flex; align-items: center; justify-content: center; color: #6B6455; font-size: 13px">[ÜRÜN FOTOĞRAFI]</div>
+<span style="font-weight: 700">Beyaz gömlek</span>
+<span style="font-size: 14px; color: #5B6575">Beden L · Çok iyi</span>
+<button type="button" style="min-height: 44px; border: 1.5px solid #0A3478; background: #FFFFFF; color: #0A3478; border-radius: 10px; font-family: inherit; font-weight: 800; cursor: pointer">Ayır</button>
+</div>
+<div style="flex: 1 1 200px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="height: 160px; border-radius: 10px; background: #E9E4D8; display: flex; align-items: center; justify-content: center; color: #6B6455; font-size: 13px">[ÜRÜN FOTOĞRAFI]</div>
+<span style="font-weight: 700">Gri kumaş pantolon</span>
+<span style="font-size: 14px; color: #5B6575">Beden 32 · İyi</span>
+<button type="button" style="min-height: 44px; border: 1.5px solid #0A3478; background: #FFFFFF; color: #0A3478; border-radius: 10px; font-family: inherit; font-weight: 800; cursor: pointer">Ayır</button>
+</div>
+</div>
+</section>
+
+<section id="etki" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 96px">
+<div style="display: flex; flex-direction: column; gap: 32px; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 24px; padding: 48px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 800; color: #0F6E7F; font-size: 15px; letter-spacing: 1px; text-transform: uppercase">Etki</span>
+<h2 style="margin: 0; font-size: 34px; font-weight: 800; color: #0A3478; letter-spacing: -0.5px">Her ürün izlenir, her etki ölçülür.</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; border-top: 3px solid #8DBB2A; padding-top: 16px">
+<span style="font-size: 44px; font-weight: 800; color: #0A3478">[—]</span>
+<span style="color: #3D4A5C">ürün yeniden kullanıma kazandırıldı</span>
+</div>
+<div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; border-top: 3px solid #8DBB2A; padding-top: 16px">
+<span style="font-size: 44px; font-weight: 800; color: #0A3478">[—]</span>
+<span style="color: #3D4A5C">öğrenciye ücretsiz ulaştı</span>
+</div>
+<div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; border-top: 3px solid #8DBB2A; padding-top: 16px">
+<span style="font-size: 44px; font-weight: 800; color: #0A3478">[—] TL</span>
+<span style="color: #3D4A5C">burs ve eğitime aktarıldı</span>
+</div>
+<div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; border-top: 3px solid #8DBB2A; padding-top: 16px">
+<span style="font-size: 44px; font-weight: 800; color: #0A3478">[—]</span>
+<span style="color: #3D4A5C">kurum Döngü ağında</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="fiyat" style="background: #F7F2E6; border-top: 1px solid #E7E1D3">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<span style="font-weight: 800; color: #0F6E7F; font-size: 15px; letter-spacing: 1px; text-transform: uppercase">Fiyatlar</span>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 800; color: #0A3478; letter-spacing: -1px">Küçük başlayın, ağ ile büyüyün.</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-size: 22px; color: #0A3478">Başlangıç</h3>
+<span style="font-size: 34px; font-weight: 800">Ücretsiz</span>
+<p style="margin: 0; color: #3D4A5C">Widget, bağış kabul ve aylık sınırlı ürün. Yeni başlayan butikler için.</p>
+<a href="#demo" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border: 1.5px solid #0A3478; border-radius: 999px; font-weight: 800; text-decoration: none">Hemen başla</a>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 2px solid #0F6E7F; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-size: 22px; color: #0A3478">Pro</h3>
+<span style="font-size: 34px; font-weight: 800">[FİYAT] <span style="font-size: 16px; font-weight: 600; color: #5B6575">/ ay</span></span>
+<p style="margin: 0; color: #3D4A5C">Sınırsız envanter, AI ile listeleme, etki raporu ve satış kanalı.</p>
+<a href="#demo" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border-radius: 999px; font-weight: 800; text-decoration: none; color: #FFFFFF; background: #0F6E7F">Demo talep et</a>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #E7E1D3; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-size: 22px; color: #0A3478">Kurumsal ve kampüs</h3>
+<span style="font-size: 34px; font-weight: 800">Teklif alın</span>
+<p style="margin: 0; color: #3D4A5C">Markalı site, öğrenci modülü, API. Sponsor destekli lisans seçeneğiyle.</p>
+<a href="#demo" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border: 1.5px solid #0A3478; border-radius: 999px; font-weight: 800; text-decoration: none">Bizimle konuşun</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="demo" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
+<div style="background: #E8F2D2; border-radius: 24px; padding: 56px 48px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 38px; line-height: 1.15; font-weight: 800; color: #1E4D33; letter-spacing: -1px">Pilot programımıza katılın.</h2>
+<p style="margin: 0; font-size: 18px; color: #2E4A3A">İstanbul'da üniversiteler, iyilik butikleri ve platformlarla ilk Döngü ağını kuruyoruz.</p>
+</div>
+<form style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; color: #1E4D33">Kurum adı
+<input type="text" placeholder="Örn. [KURUM ADI]" style="min-height: 48px; border: 1px solid #A9C27A; border-radius: 10px; padding: 0 14px; font-family: inherit; font-size: 16px; background: #FFFFFF">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; color: #1E4D33">E-posta
+<input type="email" placeholder="ad@kurum.org" style="min-height: 48px; border: 1px solid #A9C27A; border-radius: 10px; padding: 0 14px; font-family: inherit; font-size: 16px; background: #FFFFFF">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; color: #1E4D33">Kurum tipi
+<select style="min-height: 48px; border: 1px solid #A9C27A; border-radius: 10px; padding: 0 12px; font-family: inherit; font-size: 16px; background: #FFFFFF">
+<option>Üniversite / okul</option>
+<option>İkinci el butik / dernek</option>
+<option>İyilik ya da ikinci el platformu</option>
+<option>Marka / sponsor</option>
+</select>
+</label>
+<button type="button" style="min-height: 52px; border: 0; border-radius: 999px; background: #1E4D33; color: #FFFFFF; font-family: inherit; font-weight: 800; font-size: 17px; cursor: pointer">Demo talep et</button>
+</form>
+</div>
+</section>
+
+<footer style="background: #0A3478; color: #D6DEF0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px; flex: 1 1 280px">
+<div style="display: flex; align-items: center; gap: 10px">
+<img src="assets/dongu-icon.png" alt="" style="width: 40px; height: 40px; border-radius: 8px">
+<span style="font-size: 24px; font-weight: 800; color: #FFFFFF">Döngü</span>
+</div>
+<span style="font-size: 18px; color: #C9F07A; font-weight: 700">İyilik giyilir.</span>
+<span style="font-size: 14px">Circular Fashion · İstanbul</span>
+</div>
+<nav aria-label="Alt menü" style="display: flex; flex-wrap: wrap; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="color: #FFFFFF; font-weight: 800">Ürün</span>
+<a href="#kurumlar" style="color: #D6DEF0; text-decoration: none">Kurumlar için</a>
+<a href="#ogrenciler" style="color: #D6DEF0; text-decoration: none">Öğrenciler</a>
+<a href="#fiyat" style="color: #D6DEF0; text-decoration: none">Fiyatlar</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="color: #FFFFFF; font-weight: 800">Destek</span>
+<a href="#bagis" style="color: #D6DEF0; text-decoration: none">Kıyafet bağışla</a>
+<a href="#sss" style="color: #D6DEF0; text-decoration: none">Sık sorulanlar</a>
+<a href="#kvkk" style="color: #D6DEF0; text-decoration: none">KVKK</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="color: #FFFFFF; font-weight: 800">İletişim</span>
+<span>[E-POSTA]</span>
+<span>[INSTAGRAM]</span>
+</div>
+</nav>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
