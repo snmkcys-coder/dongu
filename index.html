@@ -146,9 +146,12 @@ p{margin:0}
 .kurum p{color:var(--soluk)}
 .kurum ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 .kurum a{font-weight:700;margin-top:auto;padding-top:8px}
-.kod{margin-top:32px;display:grid;grid-template-columns:minmax(0,.45fr) minmax(0,1fr);gap:24px;align-items:center;background:var(--lacivert);border-radius:22px;padding:28px 32px}
-.kod p{color:#fff;font-weight:700;font-size:18px}
-.kod code{display:block;overflow-x:auto;white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;color:#8FE3E0;background:rgba(0,0,0,.25);padding:14px 16px;border-radius:12px}
+.kod{position:relative;overflow:hidden;margin-top:32px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;background:var(--degrade);border-radius:26px;padding:40px 44px}
+.kod::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;border:40px solid rgba(33,179,181,.35);right:-90px;top:-120px;pointer-events:none}
+.kod div{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px;max-width:620px}
+.kod b{color:#fff;font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-0.02em;line-height:1.15}
+.kod span{color:#C9D7EF;font-size:17px}
+.kod .btn{position:relative;z-index:1}
 
 /* kampanya */
 .kampanya{padding:24px 0 0}
@@ -307,6 +310,7 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
     <div class="kap">
       <a class="marka" href="#top"><img src="/assets/dongu-icon.png" alt=""><span>Döngü</span></a>
       <nav class="menu" aria-label="Ana menü">
+        <a href="#neden">Neden Döngü?</a>
         <a href="#nasil">Nasıl çalışır</a>
         <a href="#gardirop">Gardırop</a>
         <a href="#kurumlar">Kurumlar için</a>
@@ -434,8 +438,11 @@ input:focus,select:focus{outline:none;border-color:var(--turkuaz)}
       </article>
     </div>
     <div class="kod">
-      <p>Sitenize eklemek için tek satır yeterli.</p>
-      <code>&lt;script src="https://dongu.app/widget.js" data-kurum="[KURUM-KODU]"&gt;&lt;/script&gt;</code>
+      <div>
+        <b>Sitenize eklemek için tek satır yeterli.</b>
+        <span>Kurum kodunuzu alın; bağış formu ve katalog birkaç dakikada sitenizde çalışsın.</span>
+      </div>
+      <a class="btn btn-beyaz" href="#pilot">Kurum kodumu al</a>
     </div>
   </div>
 </section>
